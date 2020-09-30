@@ -1,0 +1,17 @@
+
+
+.App{
+    max-width: 600px;
+margin: 0 auto
+}
+
+.App .github-reference{
+    color:#5a7496;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 10px;
+}
+
+.App .github-link{
+    color:#3086a3;
+    
+}
