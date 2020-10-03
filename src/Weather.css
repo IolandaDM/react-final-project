@@ -29,7 +29,7 @@ color: #6983aa
     color: #3b6978
     
 }
-.Weather .today-icon{
+.Weather canvas{
     font-size: 300px;
 position: relative;
 top: -10px;
@@ -42,7 +42,7 @@ padding-right: 5px
     font-size: 40px;
 }
 .Weather .unit{
-    font-size: ;
+    font-size: 40px;
 position: relative;
 top: -25px;
 font-size: 15px;
