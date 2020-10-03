@@ -1,0 +1,11 @@
+.Forescast {
+  margin-top: 10px;
+    text-align: center;
+    color: #637980;
+}
+
+canvas{
+    display: block;
+    margin: 15px auto 0 auto;
+   
+}
