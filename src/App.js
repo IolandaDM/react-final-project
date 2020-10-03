@@ -6,7 +6,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather defaultCity="New York" />
+        <Weather defaultCity="Lisbon" />
         <footer className="github-reference">
           This app was coded by Iolanda Magalhães and is {""}
           <a href="https://github.com/IolandaDM/react-final-project" target="_blank" rel="noopener noreferrer" className="github-link">

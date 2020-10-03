@@ -5,15 +5,12 @@ import "./Weather.css"
 
 
 export default function Weather(props) {
-
     const [weatherData, setWeatherData] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
     function handleResponse(response) {
-
-
         setWeatherData({
             ready: true,
-            city: props.defaultCity,
+            city: response.data.name,
             date: new Date(response.data.dt * 1000),
             description: response.data.weather[0].description,
             iconUrl: "https://ssl.gstatic.com/onebox/weather/64/sunny.png",
@@ -24,22 +21,19 @@ export default function Weather(props) {
 
     }
 
-    function search() {
-        const apiKey = "667b3c2d5276fd8b0274db2abae287d7";
-        let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-        axios.get(apiUrl).then(handleResponse);
-    }
-
     function handleSubmit(event) {
         event.preventDefault();
         search();
     }
-
     function handleCityChange(event) {
         setCity(event.target.value);
 
     }
-
+    function search() {
+        const apiKey = "667b3c2d5276fd8b0274db2abae287d7";
+        let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        axios.get(apiUrl).then(handleResponse);
+    }
     if (weatherData.ready) {
         return (
             <div className="Weather">
@@ -56,7 +50,7 @@ export default function Weather(props) {
                         </div>
                         <div className="col-3">
                             <input
-                                input="submit"
+                                type="submit"
                                 value="Search"
                                 className="btn btn-secondary w-100"
                             />
@@ -70,8 +64,7 @@ export default function Weather(props) {
         )
     } else {
         search();
-
-        return "Loading..."
+        return "Loading...";
     }
 
 
